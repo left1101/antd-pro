@@ -17,7 +17,7 @@ export default [
       {
         path: '/',
         component: '../layouts/BasicLayout',
-        authority: ['admin', 'user'],
+        access: 'canRead',
         routes: [
           {
             path: '/',
@@ -28,20 +28,21 @@ export default [
             name: 'welcome',
             icon: 'smile',
             component: './Welcome',
+            access: 'canRead',
           },
           {
             path: '/admin',
             name: 'admin',
             icon: 'crown',
             component: './Admin',
-            authority: ['admin'],
+            access: 'canRead',
             routes: [
               {
                 path: '/admin/sub-page',
                 name: 'sub-page',
                 icon: 'smile',
                 component: './Welcome',
-                authority: ['admin'],
+                access: 'canRead',
               },
             ],
           },
@@ -49,6 +50,7 @@ export default [
             name: 'list.table-list',
             icon: 'table',
             path: '/list',
+            access: 'canUpdate',
             component: './ListTableList',
           },
           {
